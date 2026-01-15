@@ -2,7 +2,7 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 let total = 0;
 
 const products = [];
-for (let i = 1; i <= 20; i++) {
+for (let i = 1; i <= 12; i++) {
     products.push({
         name: `منتج ${i}`,
         price: 100 + i * 10,
