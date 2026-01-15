@@ -271,7 +271,6 @@ button:hover {
 }
 
 .whatsapp-btn {
-    position: relative;
     background: #25D366;
     color: #000;
     border: none;
@@ -288,9 +287,8 @@ button:hover {
 }
 
 .whatsapp-btn img {
-    position: absolute;
-    left: 98px;
-    bottom: 10px;
+    position: relative;
+    top: 5px;
     width: 30px;
     height: 30px;
     object-fit: contain;
