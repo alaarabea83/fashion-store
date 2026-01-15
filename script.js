@@ -23,7 +23,11 @@ products.forEach((p, index) => {
         </div>
         <select id='size${index}'><option>اختر المقاس</option><option>M</option><option>L</option><option>XL</option></select>
         <select id='color${index}'><option>اختر اللون</option><option>أسود</option><option>أبيض</option><option>رمادي</option></select>
-        <button onclick="addToCart('${p.name}',${p.price},'size${index}','color${index}')">أضف للسلة</button>
+        <button class="add-btn" onclick="addToCart('${p.name}',${p.price},'size${index}','color${index}')">
+  <span>أضف إلى السلة</span>
+  <img src="images/add-to-cart.png" class="btn-icon">
+</button>
+
       </div>
     `;
     productList.appendChild(card);
@@ -95,13 +99,13 @@ function closeEmptyCartModal() {
 renderCart();
 
 let currentSlide = 0;
-const slides = document.querySelectorAll('.slide');
-const track = document.getElementById('carouselTrack');
-const indicatorsContainer = document.getElementById('indicators');
+const slides = document.querySelectorAll(".slide");
+const track = document.getElementById("carouselTrack");
+const indicatorsContainer = document.getElementById("indicators");
 
 /* Create indicators */
 slides.forEach((_, i) => {
-    const dot = document.createElement('span');
+    const dot = document.createElement("span");
     dot.onclick = () => goToSlide(i);
     indicatorsContainer.appendChild(dot);
 });
@@ -109,8 +113,8 @@ updateCarousel();
 
 function updateCarousel() {
     track.style.transform = `translateX(${currentSlide * 100}%)`;
-    document.querySelectorAll('.indicators span').forEach((dot, i) => {
-        dot.classList.toggle('active', i === currentSlide);
+    document.querySelectorAll(".indicators span").forEach((dot, i) => {
+        dot.classList.toggle("active", i === currentSlide);
     });
 }
 

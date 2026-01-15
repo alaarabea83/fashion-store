@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background: #000;
+    background: #1466e0;
     color: #fff;
     padding: 20px;
     text-align: center;
@@ -43,6 +43,147 @@ nav a {
     padding: 2px 8px;
     font-size: 12px;
     font-weight: bold;
+}
+
+/* شريط إخباري */
+.news-ticker {
+    position: fixed;
+    top: 120px;
+    left: 0;
+    width: 100%;
+    height: 42px;
+    background: linear-gradient(90deg, #000, #222);
+    color: #fff;
+    overflow: hidden;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+}
+
+.ticker-content {
+    display: inline-flex;
+    gap: 60px;
+    white-space: nowrap;
+    animation: ticker 20s linear infinite;
+}
+
+.ticker-content span {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+@keyframes ticker {
+    0% {
+        transform: translateX(100%)
+    }
+
+    100% {
+        transform: translateX(-100%)
+    }
+}
+
+/*  سلايدر الصور */
+.carousel {
+    position: relative;
+    max-width: 1200px;
+    margin: 30px auto 60px;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .15);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+}
+
+.caption {
+    position: absolute;
+    bottom: 30px;
+    right: 25px;
+    background: rgba(0, 0, 0, .6);
+    color: #fff;
+    padding: 12px 22px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Arrows */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, .6);
+    color: #fff;
+    border: none;
+    font-size: 30px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.prev {
+    right: 15px;
+}
+
+.next {
+    left: 15px;
+}
+
+/* Indicators */
+.indicators {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+.indicators span {
+    width: 10px;
+    height: 10px;
+    background: #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.indicators span.active {
+    background: #e91e63;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.8)
+    }
+
+    to {
+        transform: scale(1)
+    }
 }
 
 .container {
@@ -108,14 +249,54 @@ input {
 
 button {
     border: none;
-    background: #000;
+    background: #1466e0;
     color: #fff;
     cursor: pointer;
 }
 
 button:hover {
-    background: #333;
+    background: #ff0000;
 }
+
+.add-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.add-btn img.btn-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.whatsapp-btn {
+    position: relative;
+    background: #25D366;
+    color: #000;
+    border: none;
+    padding: 14px 22px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.whatsapp-btn img {
+    position: absolute;
+    left: 98px;
+    bottom: 10px;
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+
 
 .cart-overlay {
     display: none;
@@ -228,7 +409,7 @@ footer {
     padding: 10px 20px;
     border: none;
     border-radius: 8px;
-    background: #000;
+    background: #1466e0;
     color: #fff;
     cursor: pointer;
     font-weight: bold;
@@ -256,145 +437,5 @@ footer {
 
     to {
         transform: scale(1);
-    }
-}
-
-/* News ticker */
-.news-ticker {
-    position: fixed;
-    top: 120px;
-    left: 0;
-    width: 100%;
-    height: 42px;
-    background: linear-gradient(90deg, #000, #222);
-    color: #fff;
-    overflow: hidden;
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-}
-
-.ticker-content {
-    display: inline-flex;
-    gap: 60px;
-    white-space: nowrap;
-    animation: ticker 20s linear infinite;
-}
-
-.ticker-content span {
-    font-size: 14px;
-    font-weight: bold;
-}
-
-@keyframes ticker {
-    0% {
-        transform: translateX(100%)
-    }
-
-    100% {
-        transform: translateX(-100%)
-    }
-}
-
-.carousel {
-    position: relative;
-    max-width: 1200px;
-    margin: 30px auto 60px;
-    border-radius: 18px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, .15);
-}
-
-.carousel-track {
-    display: flex;
-    transition: transform 0.6s ease-in-out;
-}
-
-.slide {
-    min-width: 100%;
-    position: relative;
-}
-
-.slide img {
-    width: 100%;
-    height: 420px;
-    object-fit: cover;
-}
-
-.caption {
-    position: absolute;
-    bottom: 30px;
-    right: 25px;
-    background: rgba(0, 0, 0, .6);
-    color: #fff;
-    padding: 12px 22px;
-    border-radius: 30px;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-/* Arrows */
-.arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, .6);
-    color: #fff;
-    border: none;
-    font-size: 30px;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 10;
-}
-
-.prev {
-    right: 15px;
-}
-
-.next {
-    left: 15px;
-}
-
-/* Indicators */
-.indicators {
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 8px;
-}
-
-.indicators span {
-    width: 10px;
-    height: 10px;
-    background: #ddd;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.indicators span.active {
-    background: #e91e63;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0
-    }
-
-    to {
-        opacity: 1
-    }
-}
-
-@keyframes scaleIn {
-    from {
-        transform: scale(0.8)
-    }
-
-    to {
-        transform: scale(1)
     }
 }
