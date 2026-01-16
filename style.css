@@ -60,6 +60,7 @@ nav a {
     z-index: 9999;
     display: flex;
     align-items: center;
+    margin-top: 0;
 }
 
 .ticker-content {
